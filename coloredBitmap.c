@@ -19,17 +19,17 @@ int taille = (3 * (w * h * 8)) ;
  if (strcmp(unit, "bt") == 0) {
         return (float)taille; 
     } else if (strcmp(unit, "ko") == 0) {
-        return (float)taille / 1000; 
+        return (float)taille / 8 / 1024; 
     } else if (strcmp(unit, "mo") == 0) {
-        return (float)taille / (1000 * 1000);
+        return (float)taille / 8 / 1024 / 1024;
     } else if (strcmp(unit, "go") == 0) {
-        return (float)taille / (1000 * 1000 * 1000);
+        return (float)taille / 8 / 1024 / 1024 / 1024;
     }
     return 0; 
 }
 
 /*int main(){
-    const char* unit = "go"; 
+    const char* unit = "ko"; 
  float taille = coloredBitmap(892, 12, unit);
    
     printf("La taille de l'image Bitmap est : %f %s\n", taille, unit);
