@@ -1,6 +1,6 @@
 #include <string.h>
 #include "config/coloredBitmap.h"
-//#include <stdio.h>
+
 // Parameters:
 //   w: width of the image
 //   h: height of the image
@@ -11,10 +11,8 @@ float coloredBitmap(int w, int h, char* unit) {
    // YOUR CODE HERE - BEGIN
 int taille = (3 * (w * h * 8)) ;
 
-  printf("Taille en bits: %d\n", taille);
+  printf("Taille de limage en bits: %d\n", taille);
 
-/*int tailleoctet = (3 * (w * h * 8)) /8 ; 
- printf("Taille en bits: %d\n", tailleoctet);*/
 
  if (strcmp(unit, "bt") == 0) {
         return (float)taille; 
@@ -27,11 +25,3 @@ int taille = (3 * (w * h * 8)) ;
     }
     return 0; 
 }
-
-/*int main(){
-    const char* unit = "ko"; 
- float taille = coloredBitmap(892, 12, unit);
-   
-    printf("La taille de l'image Bitmap est : %f %s\n", taille, unit);
-    return 0;
-}*/
