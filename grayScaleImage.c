@@ -1,5 +1,5 @@
 #include "config/grayScaleImage.h"
-//#include <stdio.h>
+#include <stdio.h>
 
 // Parameters:
 //   w: width of the image
@@ -8,9 +8,11 @@
 //   grayScale size of the image Bitmap (in byte)
 float grayScaleImage(int w, int h) {
    // YOUR CODE HERE - BEGIN
- int Taille = w*h*8;
+ int Taille = (w*h*8)/8;
+
+ printf("Taille de limage en bits: %d\n", Taille);
    // YOUR CODE HERE - END
-   return Taille ;
+   return 0;
 }
 
 //int main(){
