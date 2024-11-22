@@ -11,19 +11,25 @@
 //   colored video size (based on the unit passed parametter)
 float video(int w, int h, int durationMovie, int durationCredits, int fps, char* unit) {
 
-float TailleTot = ((3*(w*h*8))*fps*durationMovie)+((w*h*1)*fps*durationCredits);
- 
-printf("La taille Totale de la video en bits: %d\n", TailleTot);
+float TailleCI = ((3*w*h)*fps*durationMovie);
+printf("La taille : %f\n", TailleCI);
 
- if (strcmp(unit, "bt") == 0) {
+float TailleBW =((w*h*1)*fps*durationCredits);
+printf("La taille : %f\n", TailleBW);
+
+float TailleTot = TailleBW + TailleCI ;
+ 
+printf("La taille Totale de la video %f\n", TailleTot);
+
+ if (strcmp(unit, "byte") == 0) {
         return (float)TailleTot; 
     } else if (strcmp(unit, "ko") == 0) {
-        return (float)TailleTot / 8 / 1024; 
+        return (float)TailleTot / 1024; 
     } else if (strcmp(unit, "mo") == 0) { 
-        return (float)TailleTot / 8 / 1024 / 1024;
+        return (float)TailleTot / 1024 / 1024;
     } else if (strcmp(unit, "go") == 0) {
-        return (float)TailleTot / 8 / 1024 / 1024 / 1024;
+        return (float)TailleTot / 1024 / 1024 / 1024;
     }
 
-   return 0 ;
+   return TailleTot ;
 }

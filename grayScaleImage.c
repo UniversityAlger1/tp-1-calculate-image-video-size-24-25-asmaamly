@@ -8,15 +8,8 @@
 //   grayScale size of the image Bitmap (in byte)
 float grayScaleImage(int w, int h) {
    // YOUR CODE HERE - BEGIN
- int Taille = (w*h*8)/8;
-
- printf("Taille de limage en bits: %d\n", Taille);
+ float Taille = (8 * w * h)/8 ;
+ printf("Taille de limage en bits: %f\n", Taille);
    // YOUR CODE HERE - END
-   return 0;
+   return Taille;
 }
-
-//int main(){
-  // float taille = grayScaleImage(1,1);
-  // printf("La taille d'une image au niveaux de gris est de :%f\n", taille);
- //  return 0;
-//}
